@@ -2,8 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Navigation"
-             x:Class="Navigation.MainPage"
-             BindingContext="MainPageViewModel">
+             x:Class="Navigation.MainPage">
     <StackLayout>
     
 	    <Entry Text="{Binding Classroom}" />
