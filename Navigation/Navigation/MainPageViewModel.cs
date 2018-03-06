@@ -42,7 +42,8 @@ namespace Navigation
             "sala2",
             "sala3",
             "sala4",
-            "sekretariat"
+            "sekretariat",
+            "kantor woźnego"
         };
     }
 }
