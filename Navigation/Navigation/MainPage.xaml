@@ -7,7 +7,7 @@
     
 	    <Entry Text="{Binding Classroom}" />
 
-        
+        <ListView ItemsSource="{Binding Classrooms}"/>
 
     </StackLayout>
 
