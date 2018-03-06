@@ -21,7 +21,7 @@ namespace Navigation
             }
         }
 
-        private List<string> _filteredClassroomList;
+        private List<string> _filteredClassroomList = _classroomList;
         public List<string> FilteredClassroomList
         {
             get
@@ -36,7 +36,7 @@ namespace Navigation
             }
         }
 
-        private List<string> _classroomList = new List<string>
+        private static List<string> _classroomList = new List<string>
         {
             "sala1",
             "sala2",
