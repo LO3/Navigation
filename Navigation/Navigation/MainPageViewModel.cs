@@ -18,25 +18,27 @@ namespace Navigation
                 RaisePropertyChanged();
             }
         }
-        public List<string> _classrooms = new List<string>
-        {
 
-            "sala 1",
+
+        private List<string> _classroomList = new List<string>
+        {
+            "sala1",
             "sala2",
             "sala3",
             "sala4",
-            "sekretariat",
-
+            "sekretariat"
         };
-        public List<string> Classrooms
+        public List<string> ClassroomList
         {
             get
             {
-                return _classrooms;
+                return _classroomList;
             }
             set
             {
-                _classrooms = value;
+                _classroomList = value;
+                RaisePropertyChanged();
+
             }
         }
     }

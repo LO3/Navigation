@@ -2,12 +2,15 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Navigation"
-             x:Class="Navigation.MainPage">
+             x:Class="Navigation.MainPage"
+             BindingContext="MainPageViewModel">
     <StackLayout>
     
 	    <Entry Text="{Binding Classroom}" />
 
-        <ListView ItemsSource="{Binding Classrooms}"/>
+
+        <ListView ItemsSource="{Binding ClassroomList}"/>
+
 
     </StackLayout>
 
