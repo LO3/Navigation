@@ -45,17 +45,5 @@ namespace Navigation
             "sekretariat",
             "kantor woźnego"
         };
-
-        public List<string> ClassroomList
-        {
-            get
-            {
-                return _classroomList;
-            }
-            set
-            {
-                _classroomList = value;
-            }
-        }
     }
 }
