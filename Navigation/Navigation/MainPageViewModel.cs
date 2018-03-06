@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Navigation
@@ -15,10 +16,25 @@ namespace Navigation
             set
             {
                 _classroom = value;
+                FilteredClassroomList = _classroomList.Where(e => e.Contains(_classroom)).ToList();
                 RaisePropertyChanged();
             }
         }
 
+        private List<string> _filteredClassroomList;
+        public List<string> FilteredClassroomList
+        {
+            get
+            {
+                return _filteredClassroomList;
+            }
+            set
+            {
+                _filteredClassroomList = value;
+                RaisePropertyChanged();
+
+            }
+        }
 
         private List<string> _classroomList = new List<string>
         {
@@ -28,6 +44,7 @@ namespace Navigation
             "sala4",
             "sekretariat"
         };
+
         public List<string> ClassroomList
         {
             get
@@ -37,8 +54,6 @@ namespace Navigation
             set
             {
                 _classroomList = value;
-                RaisePropertyChanged();
-
             }
         }
     }
