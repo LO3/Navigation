@@ -12,6 +12,7 @@ namespace Navigation
 		public MainPage()
 		{
 			InitializeComponent();
+            BindingContext = new MainPageViewModel();
 		}
 	}
 }
