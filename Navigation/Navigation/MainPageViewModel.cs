@@ -44,17 +44,5 @@ namespace Navigation
             "sala4",
             "sekretariat"
         };
-
-        public List<string> ClassroomList
-        {
-            get
-            {
-                return _classroomList;
-            }
-            set
-            {
-                _classroomList = value;
-            }
-        }
     }
 }
