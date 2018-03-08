@@ -14,5 +14,11 @@ namespace Navigation
 			InitializeComponent();
             BindingContext = new MainPageViewModel();
 		}
-	}
+
+        async void OnNavigateButtonClicked(object sender, EventArgs e)
+        {
+            await Navigation.PopAsync();
+        }
+
+    }
 }

@@ -8,7 +8,8 @@ namespace Navigation
     class MainPageViewModel : BaseViewModel
     {
         private string _classroom;
-        public string Classroom {
+        public string Classroom
+        {
             get
             {
                 return _classroom;

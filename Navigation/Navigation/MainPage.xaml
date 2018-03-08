@@ -4,11 +4,11 @@
              xmlns:local="clr-namespace:Navigation"
              x:Class="Navigation.MainPage">
     <StackLayout>
-    
-	    <Entry Text="{Binding Classroom}" />
+
+        <Entry Text="{Binding Classroom}" />
 
 
-        <ListView ItemsSource="{Binding FilteredClassroomList}"/>
+        <ListView ItemsSource="{Binding FilteredClassroomList}" />
 
 
     </StackLayout>
