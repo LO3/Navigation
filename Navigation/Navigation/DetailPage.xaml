@@ -13,8 +13,7 @@
                      AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1">
             <Label HorizontalTextAlignment="Center"
                    FontSize="30"
-                   Text="{Binding ClassroomName}"/>
-               
+                   Text="{Binding ClassroomName}"/>              
         </StackLayout>
     </AbsoluteLayout>
 </ContentPage>

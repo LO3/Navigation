@@ -5,8 +5,17 @@
              x:Class="Navigation.MainPage">
     <StackLayout>
     
-	    <Entry Text="{Binding Classroom}" />       
-        <ListView ItemsSource="{Binding FilteredClassroomList}" ItemSelected="OnItemSelected"/>
+	    <Entry Text="{Binding Classroom}" 
+               Focused="Handle_Focused"/>       
+        <ListView ItemsSource="{Binding FilteredClassroomList}" 
+                  ItemSelected="OnItemSelected"
+                  IsVisible="{Binding IsListVisible}"
+                  />
+        <Button Text="Schowaj"
+                HorizontalOptions="Center"
+                VerticalOptions="EndAndExpand"
+                Command="{Binding DismissListCommand}"
+                />
 
     </StackLayout>
 

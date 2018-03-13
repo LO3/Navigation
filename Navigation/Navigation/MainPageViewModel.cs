@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Windows.Input;
+using Xamarin.Forms;
 
 namespace Navigation
 {
@@ -34,6 +36,36 @@ namespace Navigation
                 RaisePropertyChanged();
 
             }
+        }
+
+        private bool _isListVisible;
+        public bool IsListVisible
+        {
+            get
+            {
+                return _isListVisible;
+            }
+            set 
+            {
+                _isListVisible = value;
+                RaisePropertyChanged();
+            }
+        }
+        public ICommand DismissListCommand { get; set; }
+        private void DismissList()
+        {
+            IsListVisible = false;
+        }
+
+        public MainPageViewModel()
+        {
+            IsListVisible = false;
+            DismissListCommand = new Command(DismissList);
+            MessagingCenter.Subscribe<MainPage, bool>(this, "Entry", (sender, arg) =>
+            {
+                IsListVisible = arg;
+                FilteredClassroomList = _classroomList;
+            });
         }
 
         private static List<string> _classroomList = new List<string>
