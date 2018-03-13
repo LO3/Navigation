@@ -6,8 +6,8 @@
     <StackLayout>
     
 	    <Entry Text="{Binding Classroom}" />
-
-
+        <!--<Image Source="http://lo3.gdynia.pl/kontakt/images/52fa35bc5713c.jpg" />-->
+        <Image Source="image.jpg" />
         <ListView ItemsSource="{Binding FilteredClassroomList}"/>
 
 
