@@ -1,14 +1,26 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Navigation"
              x:Class="Navigation.MainPage">
     <StackLayout>
     
-	    <Entry Text="{Binding Classroom}" />
+	    <Entry Text="{Binding EntryClassroom}" 
+               Focused="Handle_Focused"/>
 
-
-        <ListView ItemsSource="{Binding FilteredClassroomList}"/>
+        <ListView ItemsSource="{Binding FilteredClassroomList}"
+                 IsVisible="{Binding IsListVisible, Mode=TwoWay}"
+                 Margin="20, 0, 20, 200"
+                 BackgroundColor="#f7f7f7"/>
+        <Button Text="Schowaj liste"
+                 HorizontalOptions="CenterAndExpand"
+                 VerticalOptions="EndAndExpand" 
+                 Command="{Binding DismissListCommand}"
+                 BorderRadius="20" 
+                 BackgroundColor="Silver" 
+                 TextColor="White" 
+                 Margin="0, 0, 0, 10" 
+                 WidthRequest="150" />
 
 
     </StackLayout>

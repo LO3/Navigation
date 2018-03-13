@@ -9,6 +9,11 @@ namespace Navigation
 {
 	public partial class MainPage : ContentPage
 	{
+        void Handle_Focused(object sender, FocusEventArgs e)
+        {
+            MessagingCenter.Send<MainPage, bool>(this, "Entry", true);
+        }
+
 		public MainPage()
 		{
 			InitializeComponent();

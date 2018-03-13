@@ -15,7 +15,7 @@
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
-    <AndroidUseLatestPlatformSdk>true</AndroidUseLatestPlatformSdk>
+    <AndroidUseLatestPlatformSdk>false</AndroidUseLatestPlatformSdk>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
   </PropertyGroup>
@@ -82,7 +82,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Navigation\Navigation.csproj">
-      <Project>{2EEF819A-DEAE-4C96-BEF8-1A164C185DD9}</Project>
+      <Project>{25641265-5D0C-440B-92BD-4D2AE88C98B7}</Project>
       <Name>Navigation</Name>
     </ProjectReference>
   </ItemGroup>
