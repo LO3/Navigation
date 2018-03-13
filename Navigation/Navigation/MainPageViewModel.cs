@@ -62,6 +62,7 @@ namespace Navigation
         public MainPageViewModel()
         {
             _isListVisible = false;
+
             DismissListCommand = new Command(DismissList);
 
             MessagingCenter.Subscribe<MainPage, bool>(this, "Entry", (sender, arg) => {
