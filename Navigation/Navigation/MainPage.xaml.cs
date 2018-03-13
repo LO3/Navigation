@@ -20,12 +20,12 @@ namespace Navigation
             BindingContext = new MainPageViewModel();
 		}
 
-        async void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
+        async void Handle_ItemTapped(object sender, Xamarin.Forms.ItemTappedEventArgs e)
         {
-            var item = e.SelectedItem.ToString();
+            var item = e.Item.ToString();
             if (item != null)
             {
-                //System.Diagnostics.Debug.WriteLine("Beka: " + item);
+                ClassroomList.SelectedItem = false;
                 await Navigation.PushAsync(new DetailPage(item));
             }
         }

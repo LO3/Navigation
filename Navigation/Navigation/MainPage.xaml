@@ -7,11 +7,12 @@
 	    <Entry Text="{Binding EntryClassroom}" 
                Focused="Handle_Focused"/>
 
-        <ListView ItemsSource="{Binding FilteredClassroomList}"
+        <ListView x:Name="ClassroomList"
+                 ItemsSource="{Binding FilteredClassroomList}"
                  IsVisible="{Binding IsListVisible, Mode=TwoWay}"
                  Margin="20, 0, 20, 200"
                  BackgroundColor="#f7f7f7"
-                 ItemSelected="OnItemSelected" />
+                 ItemTapped="Handle_ItemTapped" />
         <Button Text="Schowaj liste"
                  HorizontalOptions="CenterAndExpand"
                  VerticalOptions="EndAndExpand" 
