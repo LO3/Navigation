@@ -4,14 +4,14 @@
              xmlns:local="clr-namespace:Navigation"
              x:Class="Navigation.MainPage">
     <StackLayout>
-    
 	    <Entry Text="{Binding EntryClassroom}" 
                Focused="Handle_Focused"/>
 
         <ListView ItemsSource="{Binding FilteredClassroomList}"
                  IsVisible="{Binding IsListVisible, Mode=TwoWay}"
                  Margin="20, 0, 20, 200"
-                 BackgroundColor="#f7f7f7"/>
+                 BackgroundColor="#f7f7f7"
+                 ItemSelected="OnItemSelected" />
         <Button Text="Schowaj liste"
                  HorizontalOptions="CenterAndExpand"
                  VerticalOptions="EndAndExpand" 
@@ -21,7 +21,6 @@
                  TextColor="White" 
                  Margin="0, 0, 0, 10" 
                  WidthRequest="150" />
-
 
     </StackLayout>
 
