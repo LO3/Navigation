@@ -20,7 +20,6 @@ namespace Navigation
             var item = e.SelectedItem.ToString();
             if (item != null)
             {
-                //System.Diagnostics.Debug.WriteLine("Beka: " + item);
                 await Navigation.PushAsync(new DetailPage(item));
             }
         }
