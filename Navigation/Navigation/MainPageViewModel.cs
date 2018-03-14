@@ -18,7 +18,7 @@ namespace Navigation
             set
             {
                 _classroom = value;
-                FilteredClassroomList = _classroomList.Where(e => e.Contains(_classroom)).ToList();
+                FilteredClassroomList = _classroomList.Where(e => e.ToLower().Contains(_classroom.ToLower())).ToList();
                 RaisePropertyChanged();
             }
         }
