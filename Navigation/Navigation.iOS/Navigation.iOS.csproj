@@ -112,6 +112,7 @@
     <BundleResource Include="Resources\Icon-Small%403x.png" />
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
     <BundleResource Include="Resources\jit.png" />
+    <BundleResource Include="Resources\pikachu.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

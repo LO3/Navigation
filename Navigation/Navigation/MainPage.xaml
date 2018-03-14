@@ -2,23 +2,39 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Navigation"
-             x:Class="Navigation.MainPage">
+             x:Class="Navigation.MainPage"
+             >
     <StackLayout>
-	    <Entry Text="{Binding EntryClassroom}" 
-               Focused="Handle_Focused"/>
+         <Entry Text="{Binding EntryClassroom}" 
+               Focused="Handle_Focused"
+               BackgroundColor="Silver"/>
+        
+         <AbsoluteLayout>
+            <Image Source="jit.png"
+                   Aspect="Fill"
+                   AbsoluteLayout.LayoutFlags="All"
+                   AbsoluteLayout.LayoutBounds="0, 1, 1, 1"/>
 
-        <ListView x:Name="ClassroomList"
-                 ItemsSource="{Binding FilteredClassroomList}"
-                 IsVisible="{Binding IsListVisible, Mode=TwoWay}"
-                 Margin="20, 0, 20, 200"
-                 BackgroundColor="#f7f7f7"
-                 ItemTapped="Handle_ItemTapped" />
-   
-        <Button Text="Schowaj"
-                HorizontalOptions="Center"
-                VerticalOptions="EndAndExpand"
-                Command="{Binding DismissListCommand}"
-                />
+            <Image Source="pikachu.jpg"
+                   Scale="0.4"
+                   IsVisible="{Binding IsPikachuVisible}"
+                   AbsoluteLayout.LayoutBounds="{Binding PikachuPosition}"
+                   AbsoluteLayout.LayoutFlags="All"/>
+
+            <ListView x:Name="ClassroomList"
+                   ItemsSource="{Binding FilteredClassroomList}"
+                   IsVisible="{Binding IsListVisible, Mode=TwoWay}"
+                   BackgroundColor="#f7f7f7"
+                   AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                   AbsoluteLayout.LayoutFlags="All"
+                   ItemTapped="Handle_ItemTapped" />
+        
+            <Button Text="Schowaj"
+                    Command="{Binding DismissListCommand}"
+                    AbsoluteLayout.LayoutBounds="0.5,1,0.3,0.1"
+                    AbsoluteLayout.LayoutFlags="All"/>
+
+        </AbsoluteLayout>
     </StackLayout>
-
+   
 </ContentPage>
