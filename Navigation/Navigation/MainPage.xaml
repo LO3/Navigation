@@ -1,15 +1,21 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Navigation"
              x:Class="Navigation.MainPage">
     <StackLayout>
-    
-	    <Entry Text="{Binding Classroom}" />
-        <!--<Image Source="http://lo3.gdynia.pl/kontakt/images/52fa35bc5713c.jpg" />-->
-        <Image Source="image.jpg" />
-        <ListView ItemsSource="{Binding FilteredClassroomList}"/>
 
+	    <Entry Text="{Binding Classroom}" 
+               Focused="Handle_Focused"/>       
+        <ListView ItemsSource="{Binding FilteredClassroomList}" 
+                  ItemSelected="OnItemSelected"
+                  IsVisible="{Binding IsListVisible}"
+                  />
+        <Button Text="Schowaj"
+                HorizontalOptions="Center"
+                VerticalOptions="EndAndExpand"
+                Command="{Binding DismissListCommand}"
+                />
 
     </StackLayout>
 
