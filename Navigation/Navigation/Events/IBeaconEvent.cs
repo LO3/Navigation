@@ -21,5 +21,7 @@ namespace IBeaconLIc.Events
             Minor = minor;
             Major = major;
         }
+
+        public delegate void IBeaconHandler(object sender, IBeaconEvent e);
     }
 }

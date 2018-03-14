@@ -18,5 +18,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
+    <Folder Include="Intefaces\" />
+    <Folder Include="Events\" />
   </ItemGroup>
 </Project>
