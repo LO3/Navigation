@@ -3,13 +3,14 @@ namespace Navigation
 {
     public class DetailPageViewModel : BaseViewModel
     {
-        private string _label;
+
+        private string _classroomName;
         public string ClassroomName
         {
-            get => _label;
+            get => _classroomName;
             set
             {
-                _label = value;
+                _classroomName = value;
                 RaisePropertyChanged();
             }
         }

@@ -11,7 +11,6 @@ namespace Navigation
         {
             InitializeComponent();
             BindingContext = new DetailPageViewModel(classroomName);
-
         }
     }
 }

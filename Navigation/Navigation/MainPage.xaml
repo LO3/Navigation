@@ -13,17 +13,12 @@
                  Margin="20, 0, 20, 200"
                  BackgroundColor="#f7f7f7"
                  ItemTapped="Handle_ItemTapped" />
-        <Button Text="Schowaj liste"
-                 HorizontalOptions="CenterAndExpand"
-                 VerticalOptions="EndAndExpand" 
-                 Command="{Binding DismissListCommand}"
-                 BorderRadius="20" 
-                 BackgroundColor="Silver" 
-                 TextColor="White" 
-                 Margin="0, 0, 0, 10" 
-                 WidthRequest="150" 
-                 IsVisible="{Binding IsListVisible}"/>
-
+   
+        <Button Text="Schowaj"
+                HorizontalOptions="Center"
+                VerticalOptions="EndAndExpand"
+                Command="{Binding DismissListCommand}"
+                />
     </StackLayout>
 
 </ContentPage>

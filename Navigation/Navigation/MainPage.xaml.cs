@@ -18,7 +18,7 @@ namespace Navigation
 		{
 			InitializeComponent();
             BindingContext = new MainPageViewModel();
-		}
+        }
 
         async void Handle_ItemTapped(object sender, Xamarin.Forms.ItemTappedEventArgs e)
         {
