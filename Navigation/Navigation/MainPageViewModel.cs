@@ -3,14 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Windows.Input;
+using IBeaconLIc.Events;
+using IBeaconLIc.Interfaces;
+using Navigation.Models;
 using Xamarin.Forms;
+using static IBeaconLIc.Events.IBeaconEvent;
 
 namespace Navigation
 {
     class MainPageViewModel : BaseViewModel
     {
         private string _classroom;
-        public string EntryClassroom {
+        public string EntryClassroom
+        {
             get
             {
                 return _classroom;
@@ -46,7 +51,7 @@ namespace Navigation
             {
                 return _isListVisible;
             }
-            set 
+            set
             {
                 _isListVisible = value;
                 RaisePropertyChanged();
@@ -65,10 +70,22 @@ namespace Navigation
             _isListVisible = false;
             DismissListCommand = new Command(DismissList);
 
-            MessagingCenter.Subscribe<MainPage, bool>(this, "Entry", (sender, arg) => {
+            MessagingCenter.Subscribe<MainPage, bool>(this, "Entry", (sender, arg) =>
+            {
                 IsListVisible = arg;
                 FilteredClassroomList = _classroomList;
-            });  
+            });
+
+            PikachuPosition = new Rectangle(BeaconsRegions.Sala2Beacon.X,
+                                            BeaconsRegions.Sala2Beacon.Y,
+                                            BeaconsRegions.Sala2Beacon.Width,
+                                            BeaconsRegions.Sala2Beacon.Height);
+            IsPikachuVisible = true;
+
+            var iBeaconService = DependencyService.Get<IiBeaconService>();
+            iBeaconService.Notify += new IBeaconHandler(Notified);
+            iBeaconService.Initialize();
+
         }
 
         private static List<string> _classroomList = new List<string>
@@ -80,5 +97,57 @@ namespace Navigation
             "Sekretariat",
             "Kantor woźnego"
         };
+
+        private Rectangle _pikachuPosition;
+        public Rectangle PikachuPosition
+        {
+            get
+            {
+                return _pikachuPosition;
+            }
+
+            set
+            {
+                _pikachuPosition = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        bool _isPikachuVisible = false;
+        public bool IsPikachuVisible
+        {
+            get
+            {
+                return _isPikachuVisible;
+            }
+            set
+            {
+                _isPikachuVisible = value;
+                RaisePropertyChanged();
+            }
+        }
+
+
+        public void Notified(object source, IBeaconEvent e)
+        {
+
+            var beacon = Beacons.BeaconList.Where(b => b.Major == e.Major && b.Minor == e.Minor).FirstOrDefault();
+
+            if (beacon != null)
+            {
+                if (beacon.Name == Beacons.BeaconList.Where(b => b.Name == "Zimno").FirstOrDefault().Name)
+                {
+                    if (e.distanceDescription == "You did it")
+                    {
+                        IsPikachuVisible = true;
+                    }
+                    else
+                    {
+                        IsPikachuVisible = false;
+                    }
+                }
+
+            }
+        }
     }
 }
