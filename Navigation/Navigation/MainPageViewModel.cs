@@ -126,24 +126,20 @@ namespace Navigation
 
         public void Notified(object source, IBeaconEvent e)
         {
-
             var beacon = Beacons.BeaconList.Where(b => b.Major == e.Major && b.Minor == e.Minor).FirstOrDefault();
 
             if (beacon != null)
-            {
-                if (beacon.Name == Beacons.BeaconList.Where(b => b.Name == "Zimno").FirstOrDefault().Name)
+            {  
+                if(e.distanceDescription == "You did it")
                 {
-                    if (e.distanceDescription == "You did it")
-                    {
-                        PikachuPosition = BeaconsRegions.Sala1Beacon;
-                        IsPikachuVisible = true;
-                    }
-                    else
-                    {
-                        IsPikachuVisible = false;
-                    }
+                    PikachuPosition = beacon.Region;
+                    IsPikachuVisible = true;
                 }
-
+                else
+                {
+                    IsPikachuVisible = false;
+                }
+               
             }
         }
     }
