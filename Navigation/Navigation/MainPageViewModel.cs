@@ -76,14 +76,10 @@ namespace Navigation
                 FilteredClassroomList = _classroomList;
             });
 
-            PikachuPosition = new Rectangle(BeaconsRegions.Sala2Beacon.X,
-                                            BeaconsRegions.Sala2Beacon.Y,
-                                            BeaconsRegions.Sala2Beacon.Width,
-                                            BeaconsRegions.Sala2Beacon.Height);
-            IsPikachuVisible = true;
+
 
             var iBeaconService = DependencyService.Get<IiBeaconService>();
-            iBeaconService.Notify += new IBeaconHandler(Notified);
+            iBeaconService.OnBeaconDataChanged += new IBeaconHandler(Notified);
             iBeaconService.Initialize();
 
         }
@@ -139,6 +135,7 @@ namespace Navigation
                 {
                     if (e.distanceDescription == "You did it")
                     {
+                        PikachuPosition = BeaconsRegions.Sala1Beacon;
                         IsPikachuVisible = true;
                     }
                     else
