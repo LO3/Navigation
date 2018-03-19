@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Navigation.AboutUs">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="O nas"
+               FontSize="Large"
+               FontAttributes="Bold"/>
+
+            <Image Source="http://lo3.gdynia.pl/kontakt/images/52fa35bc5713c.jpg" />
+
+            <Label Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dignissim eleifend commodo. Praesent ultrices justo vitae eros bibendum consectetur. Maecenas ornare ullamcorper erat, in feugiat neque blandit a. Quisque vel elit dolor. Ut purus eros, auctor vitae consectetur sed, rutrum ac velit. Morbi consectetur, leo vel efficitur iaculis, nibh felis rutrum libero, sit amet pretium massa dui vehicula felis. Mauris mattis nisl mauris, at dictum nisl vehicula a. Duis id accumsan ipsum. Vestibulum fringilla fermentum pellentesque. Sed vitae ipsum non justo iaculis fermentum. Suspendisse quis orci libero."
+               FontSize="Default"
+               FontAttributes="Bold"/>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
