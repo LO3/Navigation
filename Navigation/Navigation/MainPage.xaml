@@ -4,8 +4,8 @@
              xmlns:local="clr-namespace:Navigation"
              x:Class="Navigation.MainPage">
     <StackLayout>
-    
-	    <Entry Text="{Binding Classroom}" 
+ 
+        <Entry Text="{Binding Classroom}" 
                Focused="Handle_Focused"/>       
         <ListView ItemsSource="{Binding FilteredClassroomList}" 
                   ItemSelected="OnItemSelected"

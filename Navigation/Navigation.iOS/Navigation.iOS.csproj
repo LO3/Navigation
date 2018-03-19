@@ -129,4 +129,7 @@
       <Name>Navigation</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\wieslaw.jpg" />
+  </ItemGroup>
 </Project>
