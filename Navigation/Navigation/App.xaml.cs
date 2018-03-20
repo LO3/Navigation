@@ -13,7 +13,7 @@ namespace Navigation
 		{
 			InitializeComponent();
 
-            MainPage = new NavigationPage(new MainPage());
+            MainPage = new StartPage();
 		}
 
 		protected override void OnStart ()
