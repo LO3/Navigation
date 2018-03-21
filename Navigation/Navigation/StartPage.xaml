@@ -6,10 +6,10 @@
     <MasterDetailPage.Master>
         <local:MasterPage x:Name="masterPage"/>
     </MasterDetailPage.Master>
-    <MasterDetailPage.Detail>
+    <MasterDetailPage.Detail> <!-- Calosc to szkielet dla aplikacji z paskiem bocznym -->
         <NavigationPage>
             <x:Arguments>
-                <local:MainPage/>
+                <local:MainPage/> <!-- W tym miejscu deklarujemy poczatkowy widok -->
             </x:Arguments>
         </NavigationPage>
     </MasterDetailPage.Detail>
