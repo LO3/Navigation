@@ -7,10 +7,14 @@ namespace Navigation
 {
     public partial class DetailPage : ContentPage
     {
-        public DetailPage(string classroomName)
+        public string Item { get; set; } = "";
+
+        public DetailPage()
         {
             InitializeComponent();
-            BindingContext = new DetailPageViewModel(classroomName);
+            var vm = new DetailPageViewModel();
+            vm.ClassroomName = Item;
+            BindingContext = vm;
         }
     }
 }

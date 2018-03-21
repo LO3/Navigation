@@ -14,9 +14,10 @@ namespace Navigation
                 RaisePropertyChanged();
             }
         }
-        public DetailPageViewModel(string label)
+
+        public DetailPageViewModel()
         {
-            ClassroomName = label;
+            
         }
     }
 }

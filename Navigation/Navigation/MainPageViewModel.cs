@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Windows.Input;
-using IBeaconLIc.Events;
 using Navigation.Interfaces;
 using Notification.Events;
 using Xamarin.Forms;
-using static IBeaconLIc.Events.IBeaconEvent;
 using static Notification.Events.IBeaconEvent;
 
 namespace Navigation
@@ -85,8 +81,8 @@ namespace Navigation
             DismissListCommand = new Command(DismissList);
 
             MessagingCenter.Subscribe<MainPage, bool>(this, "Entry", (sender, arg) => {
-                IsListVisible = arg;
-                FilteredClassroomList = _classroomList;
+                IsListVisible = arg;                        //Messenger jest uzywany do wysylania informacji (wartosci) miedzy klasami
+                FilteredClassroomList = _classroomList;     //w tym wypadku odbieramy(subskrybujemy) na wartosc typu bool zeby zamykac liste
             });
 
             var IBeaconService = DependencyService.Get<IiBeaconService>();

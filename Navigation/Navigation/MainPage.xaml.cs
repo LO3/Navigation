@@ -26,7 +26,9 @@ namespace Navigation
             if (item != null)
             {
                 ClassroomList.SelectedItem = false;
-                await Navigation.PushAsync(new DetailPage(item));
+                var detail = new DetailPage();
+                detail.Item = item;
+                await Navigation.PushAsync(detail);
             }
         }
 	}
