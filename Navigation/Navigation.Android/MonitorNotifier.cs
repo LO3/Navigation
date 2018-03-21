@@ -55,7 +55,7 @@ namespace Navigation.Droid
             {
                 MonitorEventArgs monitorEvent = new MonitorEventArgs();
                 monitorEvent.Region = regionEntered;
-                EnterRegionComplete(this, monitorEvent);
+                ExitRegionComplete(this, monitorEvent);
             }
         }
     }
