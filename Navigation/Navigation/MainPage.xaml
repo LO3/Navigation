@@ -5,21 +5,21 @@
              x:Class="Navigation.MainPage">
     <StackLayout>
 	    <Entry Text="{Binding EntryClassroom}" 
-               Focused="Handle_Focused"/>
-
+               Focused="Handle_Focused"
+               Placeholder="{Binding SelectedClassroom}"/>
 
         <AbsoluteLayout>
             <Image Source="jit.png"
-                   Aspect="Fill"
-                   AbsoluteLayout.LayoutBounds="0,0,1,1"
-                   AbsoluteLayout.LayoutFlags="All"/>
+                           Aspect="Fill"
+                           AbsoluteLayout.LayoutFlags="All"
+                           AbsoluteLayout.LayoutBounds="0, 1, 1, 1"/>
+            <Image x:Name="LocalizationPin"
+                           Source="localizationpin.png"
+                           Scale="0.8"
+                           IsVisible="{Binding IsDestinationVisible, Mode=TwoWay}"
+                           AbsoluteLayout.LayoutBounds="{Binding DestinationPosition}"
+                           AbsoluteLayout.LayoutFlags="All"/>
 
-            <Image Source="image.jpg"
-                   IsVisible="{Binding IsVisible}"
-                   AbsoluteLayout.LayoutBounds="0.5,0.5,0.15,0.15"
-                   AbsoluteLayout.LayoutFlags="All"/>
-
-            
              <ListView x:Name="ClassroomList"
                  ItemsSource="{Binding FilteredClassroomList}"
                  IsVisible="{Binding IsListVisible, Mode=TwoWay}"
@@ -30,9 +30,6 @@
                  AbsoluteLayout.LayoutBounds="0,0,1,1"
                  AbsoluteLayout.LayoutFlags="All"/>
        
-            
         </AbsoluteLayout>
-       
     </StackLayout>
-
 </ContentPage>

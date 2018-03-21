@@ -19,14 +19,14 @@ namespace Navigation
             set
             {
                 _classroom = value;
-                FilteredClassroomList = _classroomList.Where(e => e.ToLower().Contains(_classroom.ToLower())).ToList();
+                FilteredClassroomList = _classroomList.Where(e => e.Name.ToLower().Contains(_classroom.ToLower())).ToList();
                 RaisePropertyChanged();
             }
         }
 
 
-        private List<string> _filteredClassroomList = _classroomList;
-        public List<string> FilteredClassroomList
+        private List<Classroom> _filteredClassroomList;
+        public List<Classroom> FilteredClassroomList
         {
             get
             {
@@ -34,7 +34,7 @@ namespace Navigation
             }
             set
             {
-                _filteredClassroomList = value;
+                _filteredClassroomList = value.ToList();
                 RaisePropertyChanged();
 
             }
@@ -69,6 +69,29 @@ namespace Navigation
             }
         }
 
+        private bool _isDestinationVisible = false;
+        public bool IsDestinationVisible
+        {
+            get => _isDestinationVisible;
+            set { _isDestinationVisible = value; RaisePropertyChanged(); }
+        }
+
+        private Rectangle _destinationPosition;
+        public Rectangle DestinationPosition
+        {
+            get => _destinationPosition;
+            set { _destinationPosition = value; RaisePropertyChanged(); }
+        }
+
+        private string _selectedClassroom;
+        public string SelectedClassroom
+        {
+            get => _selectedClassroom;
+            set { _selectedClassroom = value; RaisePropertyChanged(); }
+        }
+
+
+
         public ICommand DismissListCommand { get; set; }
         private void DismissList()
         {
@@ -85,20 +108,33 @@ namespace Navigation
                 FilteredClassroomList = _classroomList;     //w tym wypadku odbieramy(subskrybujemy) na wartosc typu bool zeby zamykac liste
             });
 
+            MessagingCenter.Subscribe<MainPage, Classroom>(this, "SelectedClassroom", (sender, arg) =>
+            {
+                IsListVisible = false;          //Odbieramy wiadomosc z Handle_ItemTapped
+                IsDestinationVisible = true;    //Ustawiamy widocznosc pinezki na true
+                DestinationPosition = arg.Region; //Ustawiamy pozycje na jakiej ma sie wyswietlic pinezka
+                SelectedClassroom = arg.Name; //Ustawiamy Placeholder w Entry na nazwe wybranego przez uzytkownika pokoju
+
+            });
+
+
             var IBeaconService = DependencyService.Get<IiBeaconService>();
             IBeaconService.OnBeaconDataChanged += new IBeaconHandler(Notified);
             IBeaconService.Initialize();
         }
 
-        private static List<string> _classroomList = new List<string>
+        private List<Classroom> _classroomList = new List<Classroom>
         {
-            "Sala1",
-            "Sala2",
-            "Sala3",
-            "Sala4",
-            "Sekretariat",
-            "Kantor woźnego"
+            new Classroom("Kuchnia", BeaconsRegion.KitchenBeacon),
+            new Classroom("MobiSmerfy", BeaconsRegion.MobiSmerfsBeacon),
+            new Classroom("Księgowość", BeaconsRegion.OfficeBeacon),
+            new Classroom("Mobilki", BeaconsRegion.MobileBeacon),
+            new Classroom("Admini", BeaconsRegion.AdminsBeacon),
+            new Classroom("PlayRoom", BeaconsRegion.PlayRoomBeacon),
+            new Classroom("MeetingRoom", BeaconsRegion.MeetingRoomBeacon),
+            new Classroom("InnyPokoj", BeaconsRegion.StrangeRoomBeacon)
         };
+
 
         public void Notified(object source, IBeaconEvent e)
         {

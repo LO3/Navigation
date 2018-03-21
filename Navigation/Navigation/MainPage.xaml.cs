@@ -20,15 +20,15 @@ namespace Navigation
             BindingContext = new MainPageViewModel();
         }
 
-        async void Handle_ItemTapped(object sender, Xamarin.Forms.ItemTappedEventArgs e)
+        void Handle_ItemTapped(object sender, Xamarin.Forms.ItemTappedEventArgs e)
         {
             var item = e.Item.ToString();
             if (item != null)
             {
                 ClassroomList.SelectedItem = false;
-                var detail = new DetailPage();
-                detail.Item = item;
-                await Navigation.PushAsync(detail);
+                MessagingCenter.Send<MainPage, Classroom> //Messenger wysyla wiadomosc, pod ktora sie podepniemy w ViewModelu
+                    (this, "SelectedClassroom", (Classroom)e.Item); //wysyla caly obiekt, ktory kliknelismy na liscie w tym wypadku obiekt klasy Classroom
+
             }
         }
 	}
