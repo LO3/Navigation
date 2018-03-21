@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-
+using CoreLocation;
 using Foundation;
 using UIKit;
 
@@ -20,9 +20,27 @@ namespace Navigation.iOS
         //
         // You have 17 seconds to return from this method, or iOS will terminate your application.
         //
+
+
+        public static CLLocationManager LocationManger;
+        NSUuid beaconUUID;
+        public static CLBeaconRegion BeaconRegion;
+
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
+
+            LocationManger = new CLLocationManager();
+            LocationManger.RequestAlwaysAuthorization();
+            beaconUUID = new NSUuid("B9407F30-F5F8-466E-AFF9-25556B57FE6D");
+
+            BeaconRegion = new CLBeaconRegion(beaconUUID, 3605, 17538, "Sala1");
+            BeaconRegion.NotifyOnEntry = true;
+            BeaconRegion.NotifyOnExit = true;
+            BeaconRegion.NotifyEntryStateOnDisplay = true;
+
+            LocationManger.StartMonitoring(BeaconRegion);
+
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);

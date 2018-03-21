@@ -7,19 +7,32 @@
 	    <Entry Text="{Binding EntryClassroom}" 
                Focused="Handle_Focused"/>
 
-        <ListView x:Name="ClassroomList"
+
+        <AbsoluteLayout>
+            <Image Source="jit.png"
+                   Aspect="Fill"
+                   AbsoluteLayout.LayoutBounds="0,0,1,1"
+                   AbsoluteLayout.LayoutFlags="All"/>
+
+            <Image Source="image.jpg"
+                   IsVisible="{Binding IsVisible}"
+                   AbsoluteLayout.LayoutBounds="0.5,0.5,0.15,0.15"
+                   AbsoluteLayout.LayoutFlags="All"/>
+
+            
+             <ListView x:Name="ClassroomList"
                  ItemsSource="{Binding FilteredClassroomList}"
                  IsVisible="{Binding IsListVisible, Mode=TwoWay}"
                  Margin="20, 0, 20, 200"
                  BackgroundColor="#d1d9ff"
                  SeparatorColor="#2c90f9"
-                 ItemTapped="Handle_ItemTapped" />
-   
-        <Button Text="Schowaj"
-                HorizontalOptions="Center"
-                VerticalOptions="EndAndExpand"
-                Command="{Binding DismissListCommand}"
-                />
+                 ItemTapped="Handle_ItemTapped" 
+                 AbsoluteLayout.LayoutBounds="0,0,1,1"
+                 AbsoluteLayout.LayoutFlags="All"/>
+       
+            
+        </AbsoluteLayout>
+       
     </StackLayout>
 
 </ContentPage>

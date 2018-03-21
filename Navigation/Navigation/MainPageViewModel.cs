@@ -3,7 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Windows.Input;
+using IBeaconLIc.Events;
+using Navigation.Interfaces;
+using Notification.Events;
 using Xamarin.Forms;
+using static IBeaconLIc.Events.IBeaconEvent;
+using static Notification.Events.IBeaconEvent;
 
 namespace Navigation
 {
@@ -54,6 +59,20 @@ namespace Navigation
         }
 
 
+        public bool _isVisible;
+        public bool Isvisible
+        {
+            get
+            {
+                return _isVisible;
+            }
+            set
+            {
+                _isVisible = value;
+                RaisePropertyChanged();
+            }
+        }
+
         public ICommand DismissListCommand { get; set; }
         private void DismissList()
         {
@@ -68,7 +87,11 @@ namespace Navigation
             MessagingCenter.Subscribe<MainPage, bool>(this, "Entry", (sender, arg) => {
                 IsListVisible = arg;
                 FilteredClassroomList = _classroomList;
-            });  
+            });
+
+            var IBeaconService = DependencyService.Get<IiBeaconService>();
+            IBeaconService.OnBeaconDataChanged += new IBeaconHandler(Notified);
+            IBeaconService.Initialize();
         }
 
         private static List<string> _classroomList = new List<string>
@@ -80,5 +103,17 @@ namespace Navigation
             "Sekretariat",
             "Kantor woźnego"
         };
+
+        public void Notified(object source, IBeaconEvent e)
+        {
+            if(e.Enter == true)
+            {
+                Isvisible = true;
+            }
+            else
+            {
+                Isvisible = false;
+            }
+        }
     }
 }

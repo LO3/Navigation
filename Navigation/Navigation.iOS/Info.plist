@@ -50,5 +50,9 @@
 	<string>LaunchScreen</string>
 	<key>CFBundleName</key>
 	<string>Navigation</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Scanning beacons</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>New Entry</string>
 </dict>
 </plist>
