@@ -3,11 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Windows.Input;
-using IBeaconLIc.Events;
 using Navigation.Interfaces;
 using Notification.Events;
 using Xamarin.Forms;
-using static IBeaconLIc.Events.IBeaconEvent;
 using static Notification.Events.IBeaconEvent;
 
 namespace Navigation
@@ -59,8 +57,8 @@ namespace Navigation
         }
 
 
-        public bool _isVisible;
-        public bool Isvisible
+        public bool _isVisible = false;
+        public bool IsVisible
         {
             get
             {
@@ -108,11 +106,11 @@ namespace Navigation
         {
             if(e.Enter == true)
             {
-                Isvisible = true;
+                IsVisible = true;
             }
             else
             {
-                Isvisible = false;
+                IsVisible = false;
             }
         }
     }

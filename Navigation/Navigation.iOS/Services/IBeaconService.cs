@@ -1,8 +1,11 @@
 ﻿using System;
 using CoreLocation;
 using Navigation.Interfaces;
+using Navigation.iOS.Services;
 using Notification.Events;
+using Xamarin.Forms;
 
+[assembly: Dependency(typeof(IBeaconService))]
 namespace Navigation.iOS.Services
 {
     public class IBeaconService : IiBeaconService
