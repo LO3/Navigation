@@ -26,7 +26,6 @@ namespace Navigation.iOS.Services
                     _beaconEventArgs.Enter = true;
                     _beaconEventArgs.RegionId = e.Region.Identifier;
                     OnNotify(_beaconEventArgs);
-
                 }
             };
 
@@ -48,7 +47,6 @@ namespace Navigation.iOS.Services
             AppDelegate.LocationManger.RequestState(AppDelegate.BeaconRegion);
 
         }
-
 
         void OnNotify(IBeaconEvent eventArgs)
         {
