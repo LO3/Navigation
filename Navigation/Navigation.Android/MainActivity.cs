@@ -34,8 +34,6 @@ namespace Navigation.Droid
            
         }
 
-       // public event IBeaconHandler OnBeaconDataChanged;
-
         protected override void OnCreate(Bundle bundle)
         {
             TabLayoutResource = Resource.Layout.Tabbar;
@@ -61,38 +59,10 @@ namespace Navigation.Droid
         {
             base.OnDestroy();
 
-            //monitorNotifier.EnterRegionComplete -= EnteredRegion;
-            //monitorNotifier.ExitRegionComplete -= ExitedRegion;
-
             beaconMgr.StopMonitoringBeaconsInRegion(monitoringRegion);
-            beaconMgr.StopRangingBeaconsInRegion(rangingRegion);
             beaconMgr.UnBind(this);
         }
 
-        //public void EnteredRegion(object sender, MonitorEventArgs e)
-        //{
-        //    if (e.Region != null)
-        //    {
-        //        _beaconEventArgs.Enter = true;
-        //        _beaconEventArgs.RegionId = e.Region.UniqueId;
-        //       // OnNotify(_beaconEventArgs);
-        //    }
-         
-        //}
-
-        //public void ExitedRegion(object sender, MonitorEventArgs e)
-        //{
-        //    _beaconEventArgs.Enter = false;
-        //    _beaconEventArgs.RegionId = e.Region.UniqueId;
-        //    //OnNotify(_beaconEventArgs);
-        //}
-
-        //public void StartMonitoring()
-        //{
-        //    _beaconEventArgs = new IBeaconEvent();
-        //    monitorNotifier.EnterRegionComplete += EnteredRegion;
-        //    monitorNotifier.ExitRegionComplete += ExitedRegion;
-        //}
 
     }
 }
