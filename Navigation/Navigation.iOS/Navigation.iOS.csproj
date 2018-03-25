@@ -133,10 +133,17 @@
   <ItemGroup>
     <BundleResource Include="Resources\image.jpg" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Services\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <AndroidResource Include="Resources\localizationpin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\gmaps3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\gmaps1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\gmaps2.png" />
   </ItemGroup>
 </Project>

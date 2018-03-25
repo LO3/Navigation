@@ -48,7 +48,7 @@ namespace Navigation
                         mdp.IsPresented = false;
                         break;
                     case 2:
-                        //mdp.Detail = new NavigationPage(new SelfGuidedPage()); // TODO
+                        mdp.Detail = new NavigationPage(new TutorialPage());
                         mdp.IsPresented = false;
                         break;
                 }
