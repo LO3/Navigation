@@ -6,28 +6,32 @@
         <StackLayout>
             <Label Text="Welcome to Xamarin.Forms!"
                 VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand"
+                   FontSize="Large"/>
+        </StackLayout>
+    </ContentPage>
+    <ContentPage>
+        <StackLayout>
+            <Image Source="gmaps1.png"
+                   Aspect="AspectFit"/>
+            <Label Text="Text1" 
                 HorizontalOptions="CenterAndExpand"/>
         </StackLayout>
     </ContentPage>
     <ContentPage>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"/>
-            <Image Source="gmaps1.png"
-                   Aspect="AspectFit"/>
-        </StackLayout>
-    </ContentPage>
-    <ContentPage>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"/>
             <Image Source="gmaps2.png"
                    Aspect="AspectFit"/>
+            <Label Text="Text2" 
+                HorizontalOptions="CenterAndExpand"/>
         </StackLayout>
     </ContentPage>
     <ContentPage>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"/>
             <Image Source="gmaps3.png"
                    Aspect="AspectFit"/>
+            <Label Text="Text3" 
+                HorizontalOptions="CenterAndExpand"/>
         </StackLayout>
     </ContentPage>
 </CarouselPage>
