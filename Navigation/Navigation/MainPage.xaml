@@ -23,9 +23,9 @@
              <ListView x:Name="ClassroomList"
                  ItemsSource="{Binding FilteredClassroomList}"
                  IsVisible="{Binding IsListVisible, Mode=TwoWay}"
-                 Margin="20, 0, 20, 200"
-                 BackgroundColor="#d1d9ff"
-                 SeparatorColor="#2c90f9"
+                 Margin="10, 0, 10, 200"
+                 BackgroundColor="#eeeeee"
+                 SeparatorColor="DarkGray"
                  ItemTapped="Handle_ItemTapped" 
                  AbsoluteLayout.LayoutBounds="0,0,1,1"
                  AbsoluteLayout.LayoutFlags="All"/>

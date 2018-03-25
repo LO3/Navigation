@@ -83,7 +83,7 @@ namespace Navigation
             set { _destinationPosition = value; RaisePropertyChanged(); }
         }
 
-        private string _selectedClassroom;
+        private string _selectedClassroom = "Wyszukaj...";
         public string SelectedClassroom
         {
             get => _selectedClassroom;
@@ -113,7 +113,8 @@ namespace Navigation
                 IsListVisible = false;          //Odbieramy wiadomosc z Handle_ItemTapped
                 IsDestinationVisible = true;    //Ustawiamy widocznosc pinezki na true
                 DestinationPosition = arg.Region; //Ustawiamy pozycje na jakiej ma sie wyswietlic pinezka
-                SelectedClassroom = arg.Name; //Ustawiamy Placeholder w Entry na nazwe wybranego przez uzytkownika pokoju
+                // SelectedClassroom = arg.Name; //Ustawiamy Placeholder w Entry na nazwe wybranego przez uzytkownika pokoju
+                EntryClassroom = arg.Name; //Ustawiamy Text w Entry na nazwe wybranego przez uzytkownika pokoju
 
             });
 
