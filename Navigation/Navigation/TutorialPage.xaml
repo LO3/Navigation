@@ -11,27 +11,30 @@
         </StackLayout>
     </ContentPage>
     <ContentPage>
-        <StackLayout>
-            <Image Source="gmaps1.png"
+        <StackLayout BackgroundColor="#2196F3">
+            <Image Source="transparent.png"
                    Aspect="AspectFit"/>
-            <Label Text="Text1" 
-                HorizontalOptions="CenterAndExpand"/>
+            <Label Text="Text1"
+                   TextColor="White"
+                   HorizontalOptions="CenterAndExpand"/>
         </StackLayout>
     </ContentPage>
     <ContentPage>
-        <StackLayout>
-            <Image Source="gmaps2.png"
+        <StackLayout BackgroundColor="#2196F3">
+            <Image Source="transparent.png"
                    Aspect="AspectFit"/>
-            <Label Text="Text2" 
-                HorizontalOptions="CenterAndExpand"/>
+            <Label Text="Text2"
+                   TextColor="White"
+                   HorizontalOptions="CenterAndExpand"/>
         </StackLayout>
     </ContentPage>
     <ContentPage>
-        <StackLayout>
-            <Image Source="gmaps3.png"
+        <StackLayout BackgroundColor="#2196F3">
+            <Image Source="transparent.png"
                    Aspect="AspectFit"/>
-            <Label Text="Text3" 
-                HorizontalOptions="CenterAndExpand"/>
+            <Label Text="Text3"
+                   TextColor="White"
+                   HorizontalOptions="CenterAndExpand"/>
         </StackLayout>
     </ContentPage>
 </CarouselPage>
